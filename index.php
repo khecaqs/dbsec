@@ -27,6 +27,7 @@ $(document).ready(function(){
 </head>
 
 <body>
+
     <div class="wrapper">
         <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-1.jpg">
             <!--
@@ -501,7 +502,8 @@ $(document).ready(function(){
                             <div class="card">
                                 <div class="card-header" data-background-color="orange">
                                     <h4 class="title"><div align="left"><b> Senarai Server </b></div> <div align="right">
-									<a href="#" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="material-icons" >add</i></a>
+									<a href="#" </a>
+									<a href="modal.php#ModAddSvr" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="material-icons" >add</i> </a>
 									</div>
 									</h4>
 									
@@ -605,6 +607,7 @@ $(document).ready(function(){
         demo.initDashboardPageCharts();
 
     });
+	
 </script>
 
 </html>
