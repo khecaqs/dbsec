@@ -1,7 +1,7 @@
 <?php
 $db = "(DESCRIPTION =
     (ADDRESS_LIST =
-      (ADDRESS = (PROTOCOL = TCP)(HOST = 192.168.90.78)(PORT = 1521))
+      (ADDRESS = (PROTOCOL = TCP)(HOST = localhost)(PORT = 1521))
     )
     (CONNECT_DATA =
       (SID = XE)

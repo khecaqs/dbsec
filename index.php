@@ -37,7 +37,7 @@ $(document).ready(function(){
     -->
             <div class="logo">
                 <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                    Database Management
                 </a>
             </div>
             <div class="sidebar-wrapper">
@@ -505,9 +505,7 @@ $(document).ready(function(){
 									<a href="#" </a>
 									<a href="modal.php#ModAddSvr" data-toggle="tooltip" data-placement="top" title="Tambah"><i class="material-icons" >add</i> </a>
 									</div>
-									</h4>
-									
-									
+									</h4>	
                                 </div>
                                 <div class="card-content table-responsive">
                                     <table class="table table-hover">
@@ -519,9 +517,9 @@ $(document).ready(function(){
                                             <th>Jenis</th>
                                             <th>DESCRIPTION</th>
                                         </thead>
-                                        <tbody overflow-y="auto" overflow-x="hidden">
+                                        <tbody>
 										<?php 
-											$query = "select svrid,svrname,svrdns,svrip,svruse,svrdesc from svrident order by svruse,svrid asc";
+											$query = "select svrid,svrname,svrdns,svrip,svrusage,svrdesc from svrident order by svrusage,svrid asc";
 											$stid = oci_parse($cae, $query);
 											oci_execute($stid);
 												while ($row=oci_fetch_array($stid))

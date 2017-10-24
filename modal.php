@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+<?php
+	include_once("conn/c.php");
+//$cae=oci_connect("ae","1","192.168.90.78:1521/xe") or die( "Error connect to database" );
+// query area
+
+
+	
+?>
 <head>
   <title>Bootstrap Example</title>
   <meta charset="utf-8">
@@ -117,7 +125,40 @@ function goBack() {
 				<div class="col-md-4">
 					<div class="form-group label-floating">
 						<label class="control-label">Kegunaan</label>
-						<input type="text" class="form-control" name="txtSvrGuna" id="txtSvrGuna">
+						
+						<select name="txtSvrGuna" id="txtSvrGuna">
+									<?php
+																		
+										if (!$cae) {
+											$e = oci_error();
+											trigger_error(htmlentities($e['message'], ENT_QUOTES), E_USER_ERROR);
+										}
+
+										$query = "select svrusageid,svrusagename from svrusage";
+										$stid = oci_parse($cae, $query);
+										
+										if( $stid === false )
+										echo "SQL silap";
+
+										if( !oci_execute($stid) )
+										echo "Xleh execute";
+										
+										while (($row = oci_fetch_array($stid, OCI_BOTH)) != false) {
+											
+											$svrusageid = $row[0];
+											$svrusagename = $row[1];
+										  ?>
+										  
+										  <option value="<?php echo $svrusageid ; ?>"><?php echo $svrusagename ; ?> </option>
+											
+										<?php  
+										}
+										oci_free_statement($stid);
+										oci_close($cae);
+
+									?>
+						</select>
+					<!-- <input type="text" class="form-control" name="txtSvrGuna" id="txtSvrGuna"> -->
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -129,7 +170,7 @@ function goBack() {
 			</div>
 			<div class="modal-footer">
 			<button type="button" onclick="goBack()" class="btn btn-default" data-dismiss="modal">Close</button>
-			<button type="submit" onclick="goBack()" class="btn btn-primary" name="svrident-submit" name="svrident-submit" >Save</button>
+			<button type="submit" class="btn btn-primary" name="svrident-submit" id="svrident-submit" onclick="goBack()">Save</button>
 			</div>
 			<div class="clearfix"></div>
 		</form>
