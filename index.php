@@ -84,12 +84,6 @@ $(document).ready(function(){
                             <p>Notifications</p>
                         </a>
                     </li>
-                    <li class="active-pro">
-                        <a href="upgrade.html">
-                            <i class="material-icons">unarchive</i>
-                            <p>Upgrade to PRO</p>
-                        </a>
-                    </li>
                 </ul>
             </div>
         </div>

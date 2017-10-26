@@ -39,11 +39,23 @@ if (!empty($_POST['oraident-submit'])) {
 if (!empty($_POST['svrident-submit'])) {
 	
 	//*** Insert Data Command ***//
+	/*
 	$strSQL = "INSERT INTO svrident ";
 	$strSQL .="(SVRID,SVRNAME,SVRDNS,SVRIP,SVRDESC) ";
 	$strSQL .="VALUES ";
 	$strSQL .="('".$_POST["txtSvrID"]."','".$_POST["txtSvrNama"]."','".$_POST["txtSvrDNS"]."','".$_POST["txtSvrIP"]."','".$_POST["txtSvrDesc"]."') ";
+	*/
 	
+	$svrid = $_POST["txtSvrID"];
+	$svrname = $_POST["txtSvrNama"];
+	$svrdns = $_POST["txtSvrDNS"];
+	$svrip = $_POST["txtSvrIP"];
+	$svrdesc = $_POST["txtSvrDesc"];
+	
+	$strSQL = "INSERT INTO svrident ";
+	$strSQL .="(SVRID,SVRNAME,SVRDNS,SVRIP,SVRDESC) ";
+	$strSQL .="VALUES ";
+	$strSQL .="('$svrid','$svrname','$svrdns','$svrip','$svrdesc') ";
 	
 	//*** Define Variable $objParse and $objExecute ***//
 	$objParse = oci_parse($cae, $strSQL);
