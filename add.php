@@ -37,14 +37,19 @@ if (!empty($_POST['oraident-submit'])) {
 
 // Insert for server identiti
 if (!empty($_POST['svrident-submit'])) {
+	$svrusage = $_POST["txtSvrGuna"];
 	
 	//*** Insert Data Command ***//
 	/*
 	$strSQL = "INSERT INTO svrident ";
-	$strSQL .="(SVRID,SVRNAME,SVRDNS,SVRIP,SVRDESC) ";
+	$strSQL .="(SVRID,SVRNAME,SVRDNS,SVRIP,SVRUSAGE,SVRDESC) ";
 	$strSQL .="VALUES ";
+<<<<<<< HEAD
 	$strSQL .="('".$_POST["txtSvrID"]."','".$_POST["txtSvrNama"]."','".$_POST["txtSvrDNS"]."','".$_POST["txtSvrIP"]."','".$_POST["txtSvrDesc"]."') ";
 	*/
+=======
+	$strSQL .="('".$_POST["txtSvrID"]."','".$_POST["txtSvrNama"]."','".$_POST["txtSvrDNS"]."','".$_POST["txtSvrIP"]."','$svrusage','".$_POST["txtSvrDesc"]."') ";
+>>>>>>> remotes/origin/master
 	
 	$svrid = $_POST["txtSvrID"];
 	$svrname = $_POST["txtSvrNama"];
